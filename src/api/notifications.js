@@ -1,0 +1,6 @@
+import client from './client';
+
+export const getNotifications = (params) => client.get('/notifications', { params });
+export const markRead = (id) => client.patch(`/notifications/${id}/read`);
+export const markAllRead = () => client.patch('/notifications/read-all');
+export const getUnreadCount = () => client.get('/notifications/unread-count');

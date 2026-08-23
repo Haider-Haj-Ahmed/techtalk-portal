@@ -1,0 +1,52 @@
+.page {
+  padding: 40px 0 80px;
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty {
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 48px 0;
+  text-align: center;
+}
+
+/* Skeleton */
+.skeleton {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeletonLine {
+  background: var(--border-hi);
+  border-radius: 4px;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.skeletonMeta  { height: 12px; width: 160px; }
+.skeletonTitle { height: 20px; width: 75%; }
+.skeletonExcerpt { height: 14px; width: 90%; }
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.8; }
+}
