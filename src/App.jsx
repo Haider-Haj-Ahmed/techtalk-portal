@@ -40,11 +40,7 @@ const FEATURES = [
   },
 ]
 
-const SCREENS = [
-  { src: '/screen1.png', alt: 'Splash screen' },
-  { src: '/screen2.png', alt: 'Onboarding' },
-  { src: '/screen3.png', alt: 'Profile' },
-]
+const APK_URL = 'https://github.com/Haider-Haj-Ahmed/techtalk-portal/releases/download/v1.0.0/techtalk.apk'
 
 export default function App() {
   return (
@@ -72,8 +68,7 @@ export default function App() {
             Share, learn, and grow — all in your pocket.
           </p>
           <div className={styles.heroCtas} id="download">
-            <StoreButton store="android" />
-            <StoreButton store="ios" />
+            <DownloadButton />
           </div>
         </div>
 
@@ -106,8 +101,7 @@ export default function App() {
         <h2 className={styles.ctaTitle}>Ready to join?</h2>
         <p className={styles.ctaSub}>Download Tech Talk and start your journey today.</p>
         <div className={styles.heroCtas}>
-          <StoreButton store="android" />
-          <StoreButton store="ios" />
+          <DownloadButton />
         </div>
       </section>
 
@@ -148,25 +142,16 @@ function TechTalkIcon({ size = 28 }) {
   )
 }
 
-function StoreButton({ store }) {
-  const isAndroid = store === 'android'
+function DownloadButton() {
   return (
-    <a href="#" className={styles.storeBtn}>
-      <span className={styles.storeBtnIcon}>
-        {isAndroid ? (
-          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
-            <path d="M3.18 23a1 1 0 0 1-1-.92V1.92a1 1 0 0 1 1.5-.87l17 10.08a1 1 0 0 1 0 1.74l-17 10.08a1 1 0 0 1-.5.05z"/>
-          </svg>
-        ) : (
-          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.2 1.3-2.18 3.87.03 3.02 2.65 4.03 2.68 4.04l-.05.21zM13 3.5C13.73 2.67 14.94 2.04 15.94 2c.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-        )}
-      </span>
-      <span className={styles.storeBtnText}>
-        <span className={styles.storeBtnSub}>{isAndroid ? 'Get it on' : 'Download on the'}</span>
-        <span className={styles.storeBtnMain}>{isAndroid ? 'Google Play' : 'App Store'}</span>
-      </span>
+    <a href={APK_URL} download className={styles.downloadBtn}>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download for Android
+      <span className={styles.downloadBadge}>APK</span>
     </a>
   )
 }

@@ -304,42 +304,32 @@
   margin-bottom: 8px;
 }
 
-/* ── Store button ──────────────────────────────────────── */
-.storeBtn {
+/* ── Download button ───────────────────────────────────── */
+.downloadBtn {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  background: var(--card);
-  border: 1px solid var(--border);
+  gap: 10px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
   border-radius: 14px;
-  padding: 12px 22px;
-  transition: border-color 200ms ease, transform 200ms ease, background 200ms ease;
+  transition: opacity 150ms ease, transform 150ms ease;
 }
 
-.storeBtn:hover {
-  border-color: rgba(74,158,245,0.45);
-  background: rgba(74,158,245,0.06);
+.downloadBtn:hover {
+  opacity: 0.88;
   transform: translateY(-2px);
 }
 
-.storeBtnIcon { color: var(--blue); display: flex; }
-
-.storeBtnText {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.storeBtnSub {
+.downloadBadge {
   font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 0.02em;
-}
-
-.storeBtnMain {
-  font-size: 15px;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.08em;
+  background: rgba(255,255,255,0.2);
+  padding: 2px 7px;
+  border-radius: 6px;
 }
 
 /* ── Footer ────────────────────────────────────────────── */
