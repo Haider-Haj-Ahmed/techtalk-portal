@@ -1,0 +1,403 @@
+/* ── Page ──────────────────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Nav ───────────────────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  background: rgba(8,12,18,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.navCta {
+  background: var(--blue);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+.navCta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* ── Hero ──────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: 100vh;
+  padding: 100px 80px 80px;
+  overflow: hidden;
+}
+
+.heroGlow {
+  position: absolute;
+  top: -100px; left: -100px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(74,158,245,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 520px;
+  z-index: 1;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: var(--blue-dim);
+  border: 1px solid rgba(74,158,245,0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--blue);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.heroTitle {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.heroAccent {
+  background: linear-gradient(90deg, #4A9EF5, #7DC4FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSub {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-bottom: 40px;
+  max-width: 440px;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Phone mockups ─────────────────────────────────────── */
+.heroPhones {
+  display: flex;
+  align-items: flex-end;
+  gap: -16px;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.phone {
+  animation: floatPhone 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatPhone {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-14px); }
+}
+
+.phoneFrame {
+  width: 160px;
+  height: 320px;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 28px;
+  padding: 10px 8px;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(74,158,245,0.1);
+  transition: transform 200ms ease;
+  opacity: 0.75;
+}
+
+.phoneFeatured .phoneFrame {
+  width: 190px;
+  height: 380px;
+  opacity: 1;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 0 2px rgba(74,158,245,0.25), 0 0 40px rgba(74,158,245,0.1);
+  z-index: 2;
+  margin: 0 -10px;
+}
+
+.phoneNotch {
+  width: 60px; height: 6px;
+  background: var(--dim);
+  border-radius: 3px;
+  margin: 0 auto 8px;
+}
+
+.phoneScreen {
+  width: 100%;
+  flex: 1;
+  height: calc(100% - 24px);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.phoneScreenInner {
+  width: 100%; height: 100%;
+  background: linear-gradient(160deg, #0D1219 0%, #0A1628 40%, #06101E 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phoneScreenInner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(74,158,245,0.22) 0%, transparent 65%);
+}
+
+/* ── Features ──────────────────────────────────────────── */
+.features {
+  padding: 100px 80px;
+  text-align: center;
+}
+
+.featuresEyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.featuresTitle {
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 56px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.featureCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: left;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.featureCard:hover {
+  border-color: rgba(74,158,245,0.35);
+  transform: translateY(-3px);
+}
+
+.featureIcon {
+  width: 44px; height: 44px;
+  background: var(--blue-dim);
+  border: 1px solid rgba(74,158,245,0.25);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+
+.featureIcon svg { width: 20px; height: 20px; }
+
+.featureLabel {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.featureDesc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ── CTA band ──────────────────────────────────────────── */
+.ctaBand {
+  position: relative;
+  margin: 0 48px 80px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 72px 40px;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ctaGlow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 300px;
+  background: radial-gradient(ellipse, rgba(74,158,245,0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ctaTitle {
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.ctaSub {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* ── Store button ──────────────────────────────────────── */
+.storeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 22px;
+  transition: border-color 200ms ease, transform 200ms ease, background 200ms ease;
+}
+
+.storeBtn:hover {
+  border-color: rgba(74,158,245,0.45);
+  background: rgba(74,158,245,0.06);
+  transform: translateY(-2px);
+}
+
+.storeBtnIcon { color: var(--blue); display: flex; }
+
+.storeBtnText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.storeBtnSub {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.storeBtnMain {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.footerCopy {
+  font-size: 12px;
+  color: var(--dim);
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .featuresGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 0 20px; }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 24px 60px;
+    min-height: auto;
+    gap: 56px;
+  }
+
+  .heroContent { max-width: 100%; }
+  .heroSub { max-width: 100%; }
+  .heroCtas { justify-content: center; }
+
+  .heroPhones { justify-content: center; }
+
+  .phone:not(.phoneFeatured) { display: none; }
+
+  .phoneFeatured .phoneFrame { width: 200px; height: 400px; }
+
+  .features { padding: 72px 24px; }
+  .featuresGrid { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .ctaBand { margin: 0 16px 60px; padding: 48px 24px; }
+
+  .footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .featuresGrid { grid-template-columns: 1fr; }
+}
