@@ -50,6 +50,11 @@
   gap: 10px;
 }
 
+.navLogoImg {
+  border-radius: 6px;
+  object-fit: contain;
+}
+
 .navBrand {
   font-size: 16px;
   font-weight: 700;
@@ -283,179 +288,12 @@
   background: var(--bg);
 }
 
-/* Phone screen variants */
-.screenMain {
-  width: 100%; height: 100%;
-  background: radial-gradient(ellipse at 50% 38%, #0C1E36 0%, #06080F 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.screenSplashGlow {
-  position: absolute;
-  width: 120px; height: 120px;
-  background: radial-gradient(circle, rgba(74,158,245,0.25) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.screenAppName {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.01em;
-}
-
-.screenVersion {
-  font-size: 9px;
-  color: var(--dim);
-  letter-spacing: 0.05em;
-}
-
-.screenBar {
-  width: 72px; height: 2px;
-  background: rgba(74,158,245,0.15);
-  border-radius: 2px;
-  margin-top: 16px;
-  overflow: hidden;
-}
-
-.screenBarFill {
-  height: 100%;
-  background: linear-gradient(90deg, #4A9EF5, #8DCEFF);
-  border-radius: 2px;
-  animation: barLoad 2.4s ease-in-out infinite;
-}
-
-@keyframes barLoad {
-  0%   { width: 0%;   opacity: 1; }
-  65%  { width: 100%; opacity: 1; }
-  85%  { width: 100%; opacity: 0; }
-  86%  { width: 0%;   opacity: 0; }
-  100% { width: 0%;   opacity: 1; }
-}
-
-/* Feed screen */
-.screenFeed {
-  width: 100%; height: 100%;
-  background: var(--bg2);
-  padding: 14px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.screenFeedHeader {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
-}
-
-.screenAvatar {
-  width: 22px; height: 22px;
-  border-radius: 50%;
-  background: var(--border2);
-  flex-shrink: 0;
-}
-
-.screenLines { flex: 1; display: flex; flex-direction: column; gap: 4px; }
-
-.screenLine {
-  height: 7px;
-  background: var(--border);
-  border-radius: 4px;
+.phoneScreenImg {
   width: 100%;
-}
-.screenLineMd { width: 70%; }
-.screenLineSm { width: 45%; }
-
-.screenReactions {
-  display: flex;
-  gap: 10px;
-  margin-top: 4px;
-}
-
-.screenReact {
-  font-size: 8px;
-  color: var(--muted);
-}
-
-/* Profile screen */
-.screenProfile {
-  width: 100%; height: 100%;
-  background: var(--bg2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 18px 10px 14px;
-  gap: 7px;
-}
-
-.screenProfileAvatar {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1A3A5C, #243550);
-  border: 1.5px solid var(--border2);
-}
-
-.screenProfileName {
-  width: 70px; height: 7px;
-  background: var(--border2);
-  border-radius: 4px;
-}
-
-.screenBadge {
-  font-size: 7px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--blue);
-  background: var(--blue-dim);
-  border: 1px solid rgba(74,158,245,0.2);
-  padding: 2px 7px;
-  border-radius: 10px;
-}
-
-.screenXpBar {
-  width: 90px; height: 3px;
-  background: rgba(74,158,245,0.12);
-  border-radius: 2px;
-  overflow: hidden;
-  margin-top: 2px;
-}
-
-.screenXpFill {
   height: 100%;
-  width: 72%;
-  background: linear-gradient(90deg, #4A9EF5, #8DCEFF);
-  border-radius: 2px;
-}
-
-.screenStats {
-  display: flex;
-  gap: 12px;
-  margin-top: 4px;
-}
-
-.screenStat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.screenStat span:first-child {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.screenStat span:last-child {
-  font-size: 7px;
-  color: var(--muted);
+  object-fit: cover;
+  object-position: top;
+  display: block;
 }
 
 /* ── Shared section styles ─────────────────────────────── */
