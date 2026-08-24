@@ -98,7 +98,7 @@ export default function App() {
         </div>
 
         <div className={s.heroPhones}>
-          <PhoneMockup src="/screen-onboarding.jpg" delay={120} />
+          <PhoneOnboarding delay={120} />
           <PhoneSplash delay={0} featured />
         </div>
       </section>
@@ -195,6 +195,52 @@ function PhoneMockup({ featured, delay, src }) {
         <div className={s.phoneNotch} />
         <div className={s.phoneScreen}>
           <img src={src} alt="TechTalk app screenshot" className={s.phoneScreenImg} />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function PhoneOnboarding({ delay }) {
+  return (
+    <div className={s.phone} style={{ animationDelay: `${delay}ms` }}>
+      <div className={s.phoneFrame}>
+        <div className={s.phoneNotch} />
+        <div className={s.phoneScreen}>
+          <div className={s.onboarding}>
+            <div className={s.onboardingTop}>
+              <div className={s.onboardingRings}>
+                <div className={s.onboardingLogoWrap}>
+                  <img src="/logo.png" width={28} height={28} alt="" />
+                </div>
+                {/* Floating pills */}
+                <div className={s.onboardingPills}>
+                  <div className={`${s.onboardingPill} ${s.pillCommunity}`}>
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#4A9EF5" strokeWidth="2.5" strokeLinecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+                    Community
+                  </div>
+                  <div className={`${s.onboardingPill} ${s.pillCode}`}>
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#4A9EF5" strokeWidth="2.5" strokeLinecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    Code
+                  </div>
+                  <div className={`${s.onboardingPill} ${s.pillDiscuss}`}>
+                    <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#4A9EF5" strokeWidth="2.5" strokeLinecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    Discuss
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={s.onboardingBottom}>
+              <p className={s.onboardingTitle}>Welcome to TechTalk</p>
+              <p className={s.onboardingSub}>The first platform that brings developers together in one interactive community</p>
+              <div className={s.onboardingDots}>
+                <div className={`${s.onboardingDot} ${s.onboardingDotActive}`} />
+                <div className={s.onboardingDot} />
+                <div className={s.onboardingDot} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
