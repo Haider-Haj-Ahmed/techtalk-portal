@@ -71,7 +71,7 @@ export default function App() {
         <div className={s.heroContent}>
           <div className={s.badge}>
             <span className={s.badgeDot} />
-            Flutter · Android & iOS · v1.0.0 · Free
+            Android & iOS · v1.0.0 · Free
           </div>
 
           <h1 className={s.heroTitle}>
@@ -98,7 +98,7 @@ export default function App() {
         </div>
 
         <div className={s.heroPhones}>
-          <PhoneOnboarding delay={120} />
+          <PhoneMockup src="/screen-onboarding.jpg" delay={120} />
           <PhoneSplash delay={0} featured />
         </div>
       </section>
