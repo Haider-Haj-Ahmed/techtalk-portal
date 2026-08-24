@@ -296,6 +296,81 @@
   display: block;
 }
 
+/* ── Splash screen (coded) ─────────────────────────────── */
+.splash {
+  width: 100%; height: 100%;
+  background: radial-gradient(ellipse at 50% 38%, #0C1E38 0%, #0A0D14 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.splashGlow {
+  position: absolute;
+  top: 28%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(74,158,245,0.22) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.splashRing {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  background: rgba(74,158,245,0.08);
+  border: 1.5px solid rgba(74,158,245,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 14px rgba(74,158,245,0.04);
+}
+
+.splashLogo {
+  object-fit: contain;
+}
+
+.splashName {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  margin-top: 4px;
+}
+
+.splashVersion {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.04em;
+}
+
+.splashBarWrap {
+  width: 80px; height: 3px;
+  background: rgba(74,158,245,0.15);
+  border-radius: 2px;
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.splashBar {
+  height: 100%;
+  background: linear-gradient(90deg, #4A9EF5, #8DCEFF);
+  border-radius: 2px;
+  animation: barLoad 2.4s ease-in-out infinite;
+}
+
+@keyframes barLoad {
+  0%   { width: 0%;   opacity: 1; }
+  65%  { width: 100%; opacity: 1; }
+  85%  { width: 100%; opacity: 0; }
+  86%  { width: 0%;   opacity: 0; }
+  100% { width: 0%;   opacity: 1; }
+}
+
 /* ── Shared section styles ─────────────────────────────── */
 .eyebrow {
   font-size: 11px;

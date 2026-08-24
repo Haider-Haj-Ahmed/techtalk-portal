@@ -99,7 +99,7 @@ export default function App() {
 
         <div className={s.heroPhones}>
           <PhoneMockup src="/screen-onboarding.jpg" delay={120} />
-          <PhoneMockup src="/screen-splash.jpg" delay={0} featured />
+          <PhoneSplash delay={0} featured />
         </div>
       </section>
 
@@ -195,6 +195,32 @@ function PhoneMockup({ featured, delay, src }) {
         <div className={s.phoneNotch} />
         <div className={s.phoneScreen}>
           <img src={src} alt="TechTalk app screenshot" className={s.phoneScreenImg} />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function PhoneSplash({ delay, featured }) {
+  return (
+    <div
+      className={`${s.phone} ${featured ? s.phoneFeatured : ''}`}
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <div className={s.phoneFrame}>
+        <div className={s.phoneNotch} />
+        <div className={s.phoneScreen}>
+          <div className={s.splash}>
+            <div className={s.splashGlow} aria-hidden />
+            <div className={s.splashRing}>
+              <img src="/logo.png" width={64} height={64} alt="TechTalk" className={s.splashLogo} />
+            </div>
+            <p className={s.splashName}>TechTalk</p>
+            <p className={s.splashVersion}>v 1.0.0</p>
+            <div className={s.splashBarWrap}>
+              <div className={s.splashBar} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
