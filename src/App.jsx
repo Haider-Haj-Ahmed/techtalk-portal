@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import s from './App.module.css'
 
-const APK_URL = 'https://github.com/Haider-Haj-Ahmed/techtalk-portal/releases/download/v1.0.0/techtalk.apk'
+const APK_URL = 'https://github.com/Haider-Haj-Ahmed/techtalk-portal/releases/download/v1.0.0/TechTalk-v1.0.0.apk'
 
 const FEATURES = [
   {
